@@ -1,0 +1,100 @@
+.play-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 70px;
+  background: #2e0101aa;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow-x: auto; /* Prevent cut-off */
+  box-sizing: border-box;
+}
+
+.play-bar-cover {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.play-bar-info {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.play-bar-info h4,
+.play-bar-info p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.play-bar-timestamp {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-top: 4px;
+}
+
+.play-bar-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.play-bar-controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* Heart icon */
+.heart-button {
+  font-size: 32px;
+  color: gray;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+
+
+.heart-button.liked {
+  color: red;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .play-bar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .play-bar-info {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .play-bar-controls {
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}

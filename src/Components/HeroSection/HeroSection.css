@@ -1,0 +1,139 @@
+.hero-modern {
+  position: relative;
+  height: 20vh;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+
+}
+
+
+
+.app-title {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+}
+
+/* Options list */
+.options {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+}
+
+.options li {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.options li:hover {
+  background: #ffffff;
+  color: #e52e71;
+  transform: scale(1.05);
+}
+
+/* Glowing blobs for background flair */
+.blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #ff9966, #ff5e62);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: floatBlob 10s infinite ease-in-out;
+  mix-blend-mode: overlay;
+}
+
+.blob1 {
+  top: 20%;
+  left: 10%;
+}
+
+.blob2 {
+  bottom: 10%;
+  right: 15%;
+}
+
+@keyframes floatBlob {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+
+.options {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 1rem;
+  justify-content: center;
+}
+
+/* Responsive behavior: column layout below 750px */
+@media (max-width: 750px) {
+  .options {
+    flex-direction: column;
+    align-items: center;
+    background: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .options li {
+    cursor: pointer;
+    padding: 5px 10px;
+    
+    border-radius: 25px;
+    
+    font-size: 0.90rem;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 750px) {
+  .app-title {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-title {
+    font-size: 36px;
+  }
+}

@@ -4,7 +4,7 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(110deg, #031120, #0c0c0c, black);
+  background: linear-gradient(110deg, #200303, #0f0a0a, black);
   color: #fff;
 }
 
@@ -12,20 +12,13 @@ body {
 .favourite-page,
 .recent-page {
   padding: 20px;
-  min-height: 100vh;
+  min-height: 70vh;
   animation: fadeIn 1s ease-in;
 }
 
-/* Headings */
-.fav-heading,
-.recent-heading {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #00ffcc;
-  position: relative;
-  animation: slideDown 0.8s ease-out;
-}
+
+
+
 
 @keyframes slideDown {
   from {
@@ -50,24 +43,8 @@ body {
   }
 }
 
-/* Empty State */
-.empty-fav,
-.empty-message {
-  margin-top: 3rem;
-  font-size: 1.2rem;
-  color: #bbb;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeIn 0.8s ease-in;
-}
 
-.heart-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: crimson;
-  animation: pulse 1.5s infinite;
-}
+
 
 @keyframes pulse {
   0%, 100% {
@@ -167,4 +144,15 @@ body {
   color: #00ffcc;
   font-weight: 500;
   text-align: right;
+}
+
+
+.not-liked{
+ margin-top: 3rem;
+  font-size: 3rem;
+  color: #bbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-in;
 }

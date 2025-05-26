@@ -3,7 +3,7 @@
 .recent-page {
   padding: 2rem;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  background: linear-gradient(135deg, #350505, #1c1c1c);
   color: white;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -47,6 +47,16 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.no-recent{
+  margin-top: 3rem;
+  font-size: 3rem;
+  color: #bbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-in;
 }
 
 .recent-song-card {

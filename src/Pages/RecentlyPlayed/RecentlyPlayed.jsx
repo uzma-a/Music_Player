@@ -1,51 +1,29 @@
-import { useEffect, useState, useRef } from "react";
-import "./RecentlyPlayed.css";
+import React from 'react';
+import { usePlayer } from '../../context/PlayerContext';
+import './RecentlyPlayed.css';
 
 const RecentlyPlayed = () => {
-  const [recentSongs, setRecentSongs] = useState([]);
-  const audioRef = useRef(null);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("recentlyPlayed");
-    if (stored) {
-      setRecentSongs(JSON.parse(stored));
-    }
-  }, []);
-
-  const playSong = (url) => {
-    if (audioRef.current) {
-      audioRef.current.src = url;
-      audioRef.current.play();
-    }
-  };
+  const { recentlyPlayed, playNewSong } = usePlayer();
 
   return (
     <div className="recent-page">
-      <h2 className="recent-heading">Recently Played Songs</h2>
-
-      {recentSongs.length === 0 ? (
-        <p>No songs played recently.</p>
+      <h1>🕑 Recently Played Songs</h1>
+      {recentlyPlayed.length === 0 ? (
+        <p className='.no-recent'>No recently played songs yet.</p>
       ) : (
-        <ul className="recent-song-list">
-          {recentSongs.map((song, index) => (
-            <li
-              key={index}
-              className="recent-song-card"
-              onClick={() => playSong(song.musicUrl)}
-            >
-              <img src={song.thumbnail} alt={song.title} />
+        <div className="song-list-grid">
+          {recentlyPlayed.map((song, index) => (
+            <div key={index} className="song-card">
+              <img src={song.cover} alt={song.title} className="song-cover" />
               <div className="song-info">
-                <p>{song.title}</p>
-                <span>{song.artist}</span>
+                <h3>{song.title}</h3>
+                <p>{song.artist}</p>
+                <button onClick={() => playNewSong(song)}>▶</button>
               </div>
-              <span className="duration">{song.duration}</span>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
-
-      {/* Hidden audio element */}
-      <audio ref={audioRef} style={{ display: "none" }} />
     </div>
   );
 };
