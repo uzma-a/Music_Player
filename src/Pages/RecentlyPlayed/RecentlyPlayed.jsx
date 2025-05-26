@@ -9,7 +9,7 @@ const RecentlyPlayed = () => {
     <div className="recent-page">
       <h1>🕑 Recently Played Songs</h1>
       {recentlyPlayed.length === 0 ? (
-        <p className='.no-recent'>No recently played songs yet.</p>
+        <p className='no-recent'>No recently played songs yet.</p>
       ) : (
         <div className="song-list-grid">
           {recentlyPlayed.map((song, index) => (
