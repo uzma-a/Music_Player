@@ -12,6 +12,7 @@ import WeddingSongs from './Components/WeddingSongs/WeddingSongs';
 import HollywoodSongs from './Components/HollywoodSongs/HollywoodSong';
 import PlayBar from './Components/PlayBar/PlayBar';
 
+
 function App() {
   useEffect(() => {
     AOS.init();

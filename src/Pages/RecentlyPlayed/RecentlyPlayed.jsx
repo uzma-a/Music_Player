@@ -2,7 +2,7 @@ import React from 'react';
 import { usePlayer } from '../../context/PlayerContext';
 import './RecentlyPlayed.css';
 
-const RecentlyPlayed = () => {
+const RecentlyPlayedSongs = () => {
   const { recentlyPlayed, playNewSong } = usePlayer();
 
   return (
@@ -28,4 +28,4 @@ const RecentlyPlayed = () => {
   );
 };
 
-export default RecentlyPlayed;
+export default RecentlyPlayedSongs;

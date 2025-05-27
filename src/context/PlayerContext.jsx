@@ -34,9 +34,14 @@ export const PlayerProvider = ({ children }) => {
 
   // Load recentlyPlayed from localStorage on init
   const [recentlyPlayed, setRecentlyPlayed] = useState(() => {
-    const saved = localStorage.getItem('recentlyPlayed');
-    return saved ? JSON.parse(saved) : [];
-  });
+  try {
+    const saved = JSON.parse(localStorage.getItem('recentlyPlayed'));
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+});
+
 
   // Save recentlyPlayed to localStorage on changes
   useEffect(() => {
